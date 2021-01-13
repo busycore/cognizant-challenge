@@ -15,7 +15,6 @@ export class BitmapController {
     description: 'The operation was completed succesfully.',
     type: [FoundOccurencesDTO],
   })
-  //@ApiBody({description : "",isArray:true,type:Number})
   @ApiOperation({
     summary: 'Found An in bitmap',
     description:
