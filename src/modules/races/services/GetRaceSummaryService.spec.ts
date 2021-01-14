@@ -49,9 +49,9 @@ describe('Race Summary', () => {
       .spyOn(getRaceSummaryService, 'uploadFile')
       .mockResolvedValue(mockedFile);
 
-    await expect(getRaceSummaryService.execute('log.txt')).resolves.toEqual(
-      result,
-    );
+    await expect(
+      getRaceSummaryService.execute('fake_file_log.txt'),
+    ).resolves.toEqual(result);
   });
 
   it('should not be able to to retrive a race summary if the the received file is empty', async () => {

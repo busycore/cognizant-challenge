@@ -18,7 +18,7 @@ export default class GetRaceSummaryService implements IGetRaceSummaryService {
     }
 
     const fileString = await this.uploadFile(file);
-    const LogFileString = fileString.toString().replaceAll('–', ';');
+    const LogFileString = fileString.toString().replace(/\–/g, ';');
     //Create and header and parse the csv to json
     const JSONRaceLog = await this.csvtojson.convert(LogFileString);
     //Start making the response object

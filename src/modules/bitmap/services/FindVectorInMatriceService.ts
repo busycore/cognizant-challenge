@@ -15,10 +15,10 @@ export default class FindVectorInMatriceService
     if (vectorAn.length === 0) {
       throw new BadRequestException('The vector should have at least 1 number');
     }
-    //The vector An
-    //let vectorAn = [0, 1, 2, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15]
 
     //The Matrice MxN(Yes it takes a real image and reads its pixels)
+    //We get an image(it's a fixed image in this case) converts it to greyscale and normalize the colors so it can fit
+    //the vectorAn
     const matrice = await this.bitmapParser.convertToMatrice('./js.png');
     //This is the array of found numbers
     const foundNumbers = this.FindNumbersInMatrice(vectorAn, matrice);
